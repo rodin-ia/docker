@@ -4,11 +4,7 @@
     CALIBRE_VERSION="6.0.0" \
     CALIBRE_ARCH="x86_64" \
     CALIBRE_URL="https://download.calibre-ebook.com/$CALIBRE_VERSION/calibre-$CALIBRE_VERSION-$CALIBRE_ARCH.txz" \
-    CALIBRE_PATH="/opt/calibre/" \
-    LANG="en_US.UTF-8" \
-    LANGUAGE="en_US.UTF-8" \
-    LC_ALL="en_US.UTF-8" 
-
+    CALIBRE_PATH="/opt/calibre/"
   RUN \
     apt update && \
     apt dist-upgrade -y && \
