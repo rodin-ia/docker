@@ -3,7 +3,7 @@
   ENV \
     CALIBRE_VERSION="6.0.0" \
     CALIBRE_ARCH="x86_64" \
-    CALIBRE_URL="https://download.calibre-ebook.com/$CALIBRE_VERSION/calibre-$CALIBRE_VERSION-$CALIBRE_ARCH.txz" \
+    CALIBRE_URL="https://download.calibre-ebook.com/${CALIBRE_VERSION}/calibre-${CALIBRE_VERSION}-${CALIBRE_ARCH}.txz" \
     CALIBRE_PATH="/opt/calibre/"
   RUN \
     apt update && \
@@ -14,9 +14,7 @@
     mkdir -p $CALIBRE_PATH
 
   RUN \
-    wget --no-check-certificate $CALIBRE_URL -O - | tar -C $CALIBRE_PATH -xJ && \
-    $CALIBRE_PATH/calibre_postinstall
+    wget --no-check-certificate ${CALIBRE_URL} -O - | tar -C ${CALIBRE_PATH} -xJ && \
+    ${CALIBRE_PATH}/calibre_postinstall
 
-  WORKDIR $CALIBRE_PATH
-
-  EXPOSE 8088
+  WORKDIR ${CALIBRE_PATH}
