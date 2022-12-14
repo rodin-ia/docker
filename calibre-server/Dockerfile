@@ -1,7 +1,7 @@
   FROM ubuntu:latest
 
   ENV \
-    CALIBRE_VERSION="6.0.0" \
+    CALIBRE_VERSION="6.9.0" \
     CALIBRE_ARCH="x86_64" \
     CALIBRE_URL="https://download.calibre-ebook.com/${CALIBRE_VERSION}/calibre-${CALIBRE_VERSION}-${CALIBRE_ARCH}.txz" \
     CALIBRE_PATH="/opt/calibre/"
