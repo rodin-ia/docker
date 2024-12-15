@@ -2,11 +2,13 @@
 FROM alpine:latest
 
 # Обновление системы и установка MiniDLNA
-RUN apk add --no-cache minidlna && \
+RUN apk update && \
+    apk upgrade && \
+    apk add --no-cache minidlna && \
     mkdir -p /var/cache/minidlna /media
 
 # Указываем рабочую директорию
-WORKDIR /etc
+WORKDIR /root
 
 # Копируем конфигурационный файл MiniDLNA (добавьте свой конфиг)
 COPY minidlna.conf /etc/minidlna.conf
